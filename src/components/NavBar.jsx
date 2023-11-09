@@ -10,14 +10,15 @@ export const NavBar = () => {
     <>
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand>
           <NavLink to="/">TT Argentina</NavLink>
           </Navbar.Brand>
-          <Nav className="me-auto">
-            <NavLink to="category/Rubber">Gomas</NavLink>
-            <NavLink to="category/Blades">Maderas</NavLink>
-            <NavLink to="category/Balls">Pelotas</NavLink>
-            <NavLink to="category/Others">Otros</NavLink>
+          <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }}
+            navbarScroll>
+            <NavLink className="navLink" to="category/Rubber">Gomas</NavLink>
+            <NavLink className="navLink" to="category/Blades">Maderas</NavLink>
+            <NavLink className="navLink" to="category/Balls">Pelotas</NavLink>
+            <NavLink className="navLink" to="category/Others">Otros</NavLink>
           </Nav>
           <CartWidget />
         </Container>

@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 
 import { products } from '../data/products';
 import { ItemList } from '../components/ItemList';
+import { UnderConstruction } from './UnderConstruction';
 
 export const ItemListContainer = (props) => {
     const [items, setItems] = useState([]);
@@ -25,6 +26,6 @@ export const ItemListContainer = (props) => {
     
     return(<><Container className="mt-4" >
             <h1>{props.greeting ? props.greeting : ""}</h1>
-        {items? <ItemList items={items} /> : <>Esperando...</>}
+        {items.length>0 ? <ItemList items={items} /> : <>Esperando...</>}
     </Container></>)
 }
