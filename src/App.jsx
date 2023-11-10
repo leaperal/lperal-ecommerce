@@ -11,14 +11,13 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Routes>
-        <Route path="/" element={<ItemListContainer greeting="Home" />}/>
-        <Route path="/category/:id" element={<ItemListContainer />}/>
-        <Route path="/item/:id" element={<ItemDetailContainer />}/>
-        <Route path="*" element={<Error404/>}/>
+        <Route path="/" element={<ItemListContainer greeting="Home" />} />
+        <Route path="/category/:id" element={<ItemListContainer />} />
+        <Route path="/item/:id" element={<ItemDetailContainer />} />
+        <Route path="*" element={<Error404 />} />
       </Routes>
-
     </BrowserRouter>
   );
-};
+}
 
-export default App
+export default App;
