@@ -1,33 +1,39 @@
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import Container from "react-bootstrap/Container";
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import Container from 'react-bootstrap/Container';
+import {
+	getFirestore,
+	getDoc,
+	doc,
+	collection,
+	getDocs,
+	query,
+	where,
+	limit,
+} from 'firebase/firestore';
 
-import { products } from "../data/products";
-import { ItemDetail } from "../components/ItemDetail";
+import { ItemDetail } from '../components/ItemDetail';
 
 export const ItemDetailContainer = () => {
-  const [item, setItem] = useState(null);
+	const [item, setItem] = useState(null);
 
-  const { id } = useParams();
+	const { id } = useParams();
 
-  useEffect(() => {
-    const mypromise = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(products);
-      }, 200);
-    });
+	useEffect(() => {
+		const db = getFirestore();
 
-    mypromise.then((response) => {
-      const findById = response.find((item) => item.id === Number(id));
-      setItem(findById);
-    });
-  }, [id]);
+		const refDoc = doc(db, 'items', id);
 
-  return (
-    <>
-      <Container className="mt-4">
-        {item ? <ItemDetail item={item} /> : <>Esperando...</>}
-      </Container>
-    </>
-  );
+		getDoc(refDoc).then((snapshot) => {
+			setItem({ id: snapshot.id, ...snapshot.data() });
+		});
+	}, []);
+
+	return (
+		<>
+			<Container className='mt-4'>
+				{item ? <ItemDetail item={item} /> : <>Esperando...</>}
+			</Container>
+		</>
+	);
 };

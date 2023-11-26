@@ -5,4 +5,6 @@
 
 .navLink {padding-left:0.5rem;}
 
-.ImgCard {align-items:center; width:fit-content; height:fit-content; }
+.ImgCard {width: 175px; height:175px; align-items: center;}
+
+.myButton{vertical-align: bottom; }
