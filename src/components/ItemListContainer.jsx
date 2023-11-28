@@ -28,7 +28,7 @@ export const ItemListContainer = (props) => {
 			: query(collection(db, 'items'), where('category', '==', id));
 
 		getDocs(refCollections).then((snapshot) => {
-			if (snapshot.size === 0) console.log('no results');
+			if (snapshot.size === 0) <h1>'no results'</h1>;
 			else
 				setItems(
 					snapshot.docs.map((doc) => {
