@@ -1,16 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import Container from 'react-bootstrap/Container';
-import {
-	getFirestore,
-	getDoc,
-	doc,
-	collection,
-	getDocs,
-	query,
-	where,
-	limit,
-} from 'firebase/firestore';
+import { Container } from 'react-bootstrap';
+import { getFirestore, getDoc, doc } from 'firebase/firestore';
 
 import { ItemDetail } from '../components/ItemDetail';
 

@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export const ItemCount = ({ onAdd, stock, initial }) => {
 	const [count, setCount] = useState(initial);
@@ -32,7 +34,11 @@ export const ItemCount = ({ onAdd, stock, initial }) => {
 				</div>
 			</div>
 			<br />
-			<button onClick={handleAdd}>Agregar</button>
+			<Button onClick={handleAdd}>Agregar</Button>
+			<> </>
+			<Link to={`/`}>
+				<Button variant='primary'>Home</Button>
+			</Link>
 		</>
 	);
 };

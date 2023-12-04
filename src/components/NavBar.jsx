@@ -1,6 +1,4 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
 import { CartWidget } from './CartWidget';
@@ -27,9 +25,6 @@ export const NavBar = () => {
 						<NavLink className='navLink' to='category/Balls'>
 							Pelotas
 						</NavLink>
-						{/* <NavLink className="navLink" to="category/Others">
-              Otros
-  </NavLink>*/}
 					</Nav>
 					<CartWidget />
 				</Container>

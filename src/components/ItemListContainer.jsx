@@ -3,17 +3,13 @@ import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import {
 	getFirestore,
-	getDoc,
-	doc,
 	collection,
 	getDocs,
 	query,
 	where,
-	limit,
 } from 'firebase/firestore';
 
 import { ItemList } from '../components/ItemList';
-import { UnderConstruction } from '../components/UnderConstruction';
 
 export const ItemListContainer = (props) => {
 	const [items, setItems] = useState([]);
