@@ -15,9 +15,9 @@ export const Cart = () => {
 	if (!items.length) {
 		return (
 			<Container className='mt-4'>
-				<h2>No hay nada!!!</h2>
+				<h2>No hay productos agregados al carrito.</h2>
 				<Link to='/'>
-					<Button>Home</Button>
+					<Button variant='dark'>Home</Button>
 				</Link>
 			</Container>
 		);
@@ -28,7 +28,7 @@ export const Cart = () => {
 			<h1>Mi Carrito</h1>
 			<Table>
 				<thead>
-					<tr>
+					<tr className='body'>
 						<th>Nombre</th>
 						<th>Cantidad</th>
 						<th>Precio Unitario</th>
@@ -61,9 +61,11 @@ export const Cart = () => {
 				<Button variant='success'>Comprar</Button>
 			</Link>
 			<> </>
-			<Button variant='secundary' onClick={clear}>
-				Vaciar Carrito
-			</Button>
+			<Link to='/'>
+				<Button variant='secondary' onClick={clear}>
+					Vaciar Carrito
+				</Button>
+			</Link>
 		</Container>
 	);
 };

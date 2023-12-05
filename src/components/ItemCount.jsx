@@ -25,19 +25,24 @@ export const ItemCount = ({ onAdd, stock, initial }) => {
 		<>
 			<div style={{ display: 'flex' }}>
 				<br />
-				<div style={{ display: 'flex' }} onClick={handeDecreaseCount}>
-					-
-				</div>
-				<mark>{count}</mark>
-				<div style={{ display: 'flex' }} onClick={handeIncreaseCount}>
-					+
-				</div>
+				<h5>
+					<Button variant='secondary' onClick={handeDecreaseCount}>
+						{' '}
+						-{' '}
+					</Button>
+					<mark> {count} </mark>
+					<Button variant='secondary' onClick={handeIncreaseCount}>
+						+
+					</Button>
+				</h5>
 			</div>
 			<br />
-			<Button onClick={handleAdd}>Agregar</Button>
+			<Button onClick={handleAdd} variant='success'>
+				Agregar
+			</Button>
 			<> </>
 			<Link to={`/`}>
-				<Button variant='primary'>Home</Button>
+				<Button variant='dark'>Home</Button>
 			</Link>
 		</>
 	);

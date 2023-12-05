@@ -57,9 +57,9 @@ export const Checkout = () => {
 	if (!items.length) {
 		return (
 			<Container className='mt-4'>
-				<h2>No hay nada!!!</h2>
+				<h2>Gracias por su Compra!!!</h2>
 				<Link to={`/`}>
-					<Button>Home</Button>
+					<Button variant='dark'>Home</Button>
 				</Link>
 			</Container>
 		);
@@ -137,8 +137,9 @@ export const Checkout = () => {
 				<Button variant='success' onClick={sendOrder} disabled={!visible()}>
 					Comprar
 				</Button>
+				<> </>
 				<Link to={`/`}>
-					<Button variant='secundary' onClick={clear}>
+					<Button variant='secondary' onClick={clear}>
 						Cancelar
 					</Button>
 				</Link>

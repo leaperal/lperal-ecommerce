@@ -1,6 +1,6 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Button } from 'react-bootstrap';
 import { getFirestore, getDoc, doc } from 'firebase/firestore';
 
 import { ItemDetail } from '../components/ItemDetail';
