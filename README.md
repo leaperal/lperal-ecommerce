@@ -8,7 +8,7 @@ Repo:
 https://github.com/leaperal/lperal-ecommerce
 
 Dev:
-https://psychic-engine-wr7wg4wwvxg7hgqxw.github.dev/
+https://fuzzy-space-sniffle-wr7wg4wwvx5q2xx.github.dev/
 
 ## Installation
 
