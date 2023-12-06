@@ -41,7 +41,7 @@ export const ItemListContainer = (props) => {
 	}, [id]);
 
 	if (loading) {
-		<Loading />;
+		return <Loading />;
 	} else {
 		return (
 			<>

@@ -27,7 +27,7 @@ export const ItemDetailContainer = () => {
 	}, []);
 
 	if (loading) {
-		<Loading />;
+		return <Loading />;
 	} else {
 		return (
 			<>
