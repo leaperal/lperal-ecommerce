@@ -10,9 +10,12 @@ import {
 } from 'firebase/firestore';
 
 import { ItemList } from '../components/ItemList';
+import { Error404 } from '../components/Error404';
+import { Loading } from '../components/Loading';
 
 export const ItemListContainer = (props) => {
 	const [items, setItems] = useState([]);
+	const [loading, setLoading] = useState(true);
 
 	const { id } = useParams();
 
@@ -23,23 +26,30 @@ export const ItemListContainer = (props) => {
 			? collection(db, 'items')
 			: query(collection(db, 'items'), where('category', '==', id));
 
-		getDocs(refCollections).then((snapshot) => {
-			if (snapshot.size === 0) <h1>'no results'</h1>;
-			else
-				setItems(
-					snapshot.docs.map((doc) => {
-						return { id: doc.id, ...doc.data() };
-					}),
-				);
-		});
+		getDocs(refCollections)
+			.then((snapshot) => {
+				if (snapshot.size === 0) <h1>'no results'</h1>;
+				else
+					setItems(
+						snapshot.docs.map((doc) => {
+							return { id: doc.id, ...doc.data() };
+						}),
+					);
+			})
+			.catch(() => <Error404 />)
+			.finally(() => setLoading(false));
 	}, [id]);
 
-	return (
-		<>
-			<Container className='mt-4'>
-				<h1>{props.greeting ? props.greeting : ''}</h1>
-				{items.length > 0 ? <ItemList items={items} /> : <>Esperando...</>}
-			</Container>
-		</>
-	);
+	if (loading) {
+		<Loading />;
+	} else {
+		return (
+			<>
+				<Container className='mt-4'>
+					<h1>{props.greeting ? props.greeting : id ? id : ''}</h1>
+					{items.length > 0 ? <ItemList items={items} /> : <Error404 />}
+				</Container>
+			</>
+		);
+	}
 };
