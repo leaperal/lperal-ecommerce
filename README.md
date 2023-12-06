@@ -8,7 +8,7 @@ Repo:
 https://github.com/leaperal/lperal-ecommerce
 
 Dev:
-https://turbo-system-x5wjv4jjr9wx26gq.github.dev/
+https://psychic-engine-wr7wg4wwvxg7hgqxw.github.dev/
 
 ## Installation
 
